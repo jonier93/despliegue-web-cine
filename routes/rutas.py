@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify
-from app import app
+from server import app
 from controllers.controlador import principal, logear, registrar, cartelera, contactar, confirmarRegistro, confirmarSesion, prepararDatos, obtenerDatos, actualizarRegistro
 import json
 
