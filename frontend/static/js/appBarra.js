@@ -5,17 +5,17 @@ document.querySelector('#btnBillboard').addEventListener('click', cartelera)
 document.querySelector('#btnContact').addEventListener('click', contactar)
 
 function main(){
-    window.location.href=`home`
+    window.location.href=window.location.origin+"/home"
 }
 function logearse(){
-    window.location.href=`login`
+    window.location.href=window.location.origin+`/login`
 }
 function registrar(){
-    window.location.href=`register`
+    window.location.href=window.location.origin+`/register`
 }
 function cartelera(){
-    window.location.href=`billboard`
+    window.location.href=window.location.origin+`/billboard`
 }
 function contactar(){
-    window.location.href="contact"
+    window.location.href=window.location.origin+"/contact"
 }

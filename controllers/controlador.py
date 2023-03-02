@@ -1,6 +1,7 @@
 from email import message
 from flask import Flask, render_template, request, jsonify, redirect
 import baseDatos
+import hashlib
 
 def principal():
     return render_template('index.html')
@@ -39,7 +40,9 @@ def confirmarSesion():
     password = request.form.get('password')
     results = baseDatos.consultaEspecifica(user, password)
     if len(results) != 0:
-        if password == results[0][4]:  
+        pass_encrip = hashlib.sha256(password.encode('utf-8'))
+        pass_encrip_hex = pass_encrip.hexdigest()
+        if pass_encrip_hex == results[0][4]:  
             return render_template('billboard.html', message1=results[0][0], message2=results[0][2], message3=results[0][3])
         else:
             return render_template('confirmation.html', message=3)
